@@ -15,9 +15,9 @@ int josephusAlternate(int n, int k) // Space Complex: Theta(1)
 int josephus(vector<int> &v, int k, int start) { // Space complex: Theta(N)
     if(v.size()==1)
         return v[0];
-    int kill = (start+k-1)%v.size();
-    v.erase(v.begin()+kill);
-    start = kill%v.size();
+    int killIndex = (start+k-1)%v.size();
+    v.erase(v.begin()+killIndex);
+    start = killIndex%v.size();
     return josephus(v, k, start);
 }
 
